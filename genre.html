@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storyhub - Genres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #080A45;
+        }
+        header {
+            background-color: #080A45;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .genre {
+            background-color: #585AB3;
+            border-radius: 10px;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+        }
+        .genre:hover {
+            background-color: white;
+            color: #585AB3;
+            transform: scale(1.1);
+        }
+        .story-list {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .story {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #585AB3;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .story:hover {
+            background-color: #080A45;
+            color: #585AB3;
+        }
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #080A45;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StoryHub - Explore Genres</h1>
+    </header>
+    <div class="container">
+        <div class="genres">
+            <div class="genre" onclick="showStories('fantasy')">Fantasy</div>
+            <div class="genre" onclick="showStories('mystery')">Mystery</div>
+            <div class="genre" onclick="showStories('adventure')">Adventure</div>
+            <div class="genre" onclick="showStories('horror')">Horror</div>
+        </div>
+        <div id="fantasy" class="story-list">
+            <h2>Fantasy Stories</h2>
+            <div class="story">
+                <h3>The Enchanted Forest</h3>
+                <p>
+                    Deep within the mystical woods lies the Enchanted Forest... 
+                    <span class="toggle-story" onclick="toggleStory(this)">See Full Story</span>
+                </p>
+                <p class="full-story">
+                    Deep within the mystical woods lies the Enchanted Forest, a realm shrouded in perpetual twilight where the leaves glimmer like jewels under the moonlight. Legends whisper of an ancient treasure hidden deep within, guarded by spirits who test the worthiness of any intruder. Ella, a young girl with a heart full of courage, stumbles upon this magical forest while searching for her kidnapped brother, Ethan.
+
+Her journey begins with a mysterious map left behind by her late grandmother, who had always told Ella fantastical tales of the forest. Guided by the map, Ella ventures into the unknown, accompanied by a talking fox named Auron. As they tread deeper into the forest, they encounter challenges that test Ella's bravery and kindness.
+
+Ella discovers that her brother has been taken by the Shadow King, a dark ruler bent on conquering both the magical and human realms. Along the way, Ella meets a Moon Elf who reveals that the treasure hidden in the forest is not gold but a force powerful enough to vanquish the Shadow King. To claim it, Ella must complete three trials: the Trial of Truth, the Trial of Compassion, and the Trial of Fear.
+
+The first trial forces Ella to confront her deepest insecurities. A mirror shows her every failure and doubt, but Ella embraces them as part of her journey, passing the Trial of Truth. The second trial requires her to help a trapped Water Sprite, even though doing so delays her mission. Her selflessness earns her the sprite's blessing. The final trial plunges Ella into an illusion where she faces her worst fear: losing her brother forever. She overcomes the trial by realizing that love gives her strength.
+
+In the final confrontation, Ella uses the treasure's power—her pure heart and unwavering love—to banish the Shadow King. Ethan is freed, and the Enchanted Forest is restored to its former glory. Ella returns home, forever changed, with a story that inspires her village for generations.
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5b9XPSklDtE?si=7oFROE_QyfTWrJgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="story">
+                <h3>The Dragon’s Heart</h3>
+                <p>In a kingdom overshadowed by the tyranny of a rogue dragon...</p>
+            </div>
+            <div class="story">
+                <h3>The Last Unicorn</h3>
+                <p>This tale follows Lyra, the last unicorn, on a journey to find others of her kind...</p>
+                <iframe src="https://www.youtube.com/embed/example2" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div id="mystery" class="story-list">
+            <h2>Mystery Stories</h2>
+            <div class="story">
+                <h3>In the silent town</h3>
+                <p>In the small town of Blackwood, nothing is as it seems. The streets are eerily quiet, the townsfolk avoid eye contact, and the clocktower has been stuck at midnight for decades. Detective Laura Bennett arrives, tasked with solving the mysterious disappearance of a local woman, Clara Bell.
+
+                    As Laura digs deeper, she uncovers strange details about Clara's life. Clara had been researching the town's history and frequently visited the abandoned Blackwood Manor. Locals warn Laura to stay away from the manor, but her instincts lead her there. Inside, she finds a diary filled with cryptic entries about "the midnight secret" and "the shadow in the mirror."
+                    
+                    Laura notices a recurring name in the diary: Marcus Harlow, the clockmaker who disappeared the night the clocktower stopped. Legend has it that Marcus was experimenting with time manipulation, hoping to undo the death of his wife. Laura pieces together that Clara must have discovered the truth and been silenced.
+                    
+                    Determined, Laura explores the manor's basement, uncovering a hidden passage that leads to a workshop filled with strange devices. One of them is a mirror that doesn't reflect Laura but instead shows Clara screaming for help. Suddenly, shadows envelop the room, and Laura is transported to the night Marcus vanished. She realizes that the town is trapped in a time loop.
+                    
+                    Using the clues in Clara's diary, Laura finds a way to break the loop. She destroys Marcus's experiment, releasing the town from its timeless curse. Clara and Marcus reappear, and the clocktower finally strikes midnight. Laura leaves Blackwood with a sense of accomplishment, but she can't shake the feeling that some mysteries remain unsolved.
+                    
+                    </p>
+            </div>
+            <div class="story">
+                <h3>The Locked Room</h3>
+                <p>In a quiet town, a gruesome murder occurs inside a room locked from the inside...</p>
+            </div>
+            <div class="story">
+                <h3>The Whispering Shadows</h3>
+                <p>In a quaint countryside mansion, strange whispers haunt the new owners...</p>
+            </div>
+        </div>
+        <div id="adventure" class="story-list">
+            <h2>Adventure Stories</h2>
+            <div class="story">
+                <h3>The Lost island</h3>
+                <p>Captain Zara Drayton was no stranger to danger. As the captain of the renowned ship Aurora, she had sailed through the fiercest storms and faced the deadliest pirates. But her latest adventure—a quest to find the fabled Lost Island—promised to be her most perilous yet.
+
+                    The Lost Island was said to hold treasures beyond imagination, guarded by ancient traps and mythical creatures. Zara's crew, a motley band of adventurers, set sail with a cryptic map found in an old sailor's chest. The journey was fraught with challenges. A monstrous sea serpent attacked their ship, and they narrowly escaped a violent storm that seemed almost supernatural.
+                    
+                    When they finally reached the island, its beauty was otherworldly. Crystal-clear waters surrounded golden sands, and the jungle teemed with vibrant, unfamiliar creatures. But the crew had little time to marvel. The map led them to a cavern guarded by stone statues that seemed to watch their every move. One crew member triggered a trap, narrowly escaping a barrage of poison darts.
+                    
+                    Deeper in the cavern, they found the treasure: a chest filled with jewels and a mysterious artifact glowing with an inner light. But their triumph was short-lived. The island began to shake violently, and Zara realized the artifact was the island's power source. Removing it had triggered its destruction.
+                    
+                    In a race against time, Zara and her crew fled the collapsing cavern, battling rockslides and the reawakening sea serpent. They made it back to the ship just as the island sank into the sea, taking its secrets with it. Though they lost much of the treasure, Zara kept the artifact, a reminder of their incredible journey and a promise of more adventures to come.</p>
+                <iframe src="https://www.youtube.com/embed/example3" allowfullscreen></iframe>
+            </div>
+            <div class="story">
+                <h3>Desert of Dreams</h3>
+                <p>Set in the vast Sahara, this story follows Zara, a treasure hunter searching for the mythical Desert Rose...</p>
+            </div>
+            <div class="story">
+                <h3>The Sky Pirates</h3>
+                <p>In a world where airships rule the skies, a young mechanic named Theo joins a crew of sky pirates...</p>
+            </div>
+        </div>
+        <div id="horror" class="story-list">
+            <h2>Horror Stories</h2>
+            <div class="story">
+                <h3>The Haunted Manor</h3>
+                <p>Newlyweds John and Sarah move into an old manor...</p>
+            </div>
+            <div class="story">
+                <h3>The Dollmaker’s Curse</h3>
+                <p>A small town is terrorized by lifelike dolls appearing in unexpected places...</p>
+            </div>
+            <div class="story">
+                <h3>The Forgotten Asylum</h3>
+                <p>When a group of friends dares to enter an abandoned asylum...</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showStories(genre) {
+            const allLists = document.querySelectorAll('.story-list');
+            allLists.forEach(list => list.style.display = 'none');
+            document.getElementById(genre).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

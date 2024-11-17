@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f5;
+            color: #080A45;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #080A45;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .story-section {
+            background-color: #585AB3;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.8;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+        }
+        .story-section:hover {
+            background-color: #080A45;
+            color: white;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .option {
+            background-color: #080A45;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .option:hover {
+            background-color: white;
+            color: #080A45;
+        }
+        .story-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interactive Story Game</h1>
+        <p>Every choice you make shapes your destiny!</p>
+    </header>
+    <div class="container">
+        <div id="story" class="story-section">
+            <h2>The Mysterious Map</h2>
+            <p>You inherit an ancient map from your grandfather, rumored to lead to a hidden treasure. The journey begins at a forked road: one path leads to a dense forest, the other to a rugged mountain trail. What do you choose?</p>
+            <img id="story-image" class="story-image" src="https://via.placeholder.com/800x400?text=Forked+Path" alt="Forked Path">
+            <div class="options">
+                <button class="option" onclick="makeChoice('forest')">Take the forest path</button>
+                <button class="option" onclick="makeChoice('mountain')">Climb the mountain trail</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let storyDiv = document.getElementById('story');
+        let storyImage = document.getElementById('story-image');
+
+        function makeChoice(choice) {
+            switch (choice) {
+                case 'forest':
+                    updateStory(
+                        "You enter the dense forest. The air grows colder, and you hear distant howls. As you tread carefully, you spot a small hut glowing faintly in the distance. What will you do?",
+                        "https://via.placeholder.com/800x400?text=Forest+Hut",
+                        ["Approach the hut", "Ignore it and continue deeper"],
+                        ['hut', 'deeper_forest']
+                    );
+                    break;
+                case 'mountain':
+                    updateStory(
+                        "The mountain trail is steep and treacherous. You come across a hidden cave with strange markings on its entrance. What will you do?",
+                        "https://via.placeholder.com/800x400?text=Mountain+Cave",
+                        ["Enter the cave", "Keep climbing the trail"],
+                        ['cave', 'trail']
+                    );
+                    break;
+                case 'hut':
+                    updateStory(
+                        "The hut is abandoned, but inside you find an old diary. It warns of a cursed lake nearby. Suddenly, you hear footsteps outside.",
+                        "https://via.placeholder.com/800x400?text=Abandoned+Hut",
+                        ["Investigate the noise", "Hide inside the hut"],
+                        ['noise', 'hide_hut']
+                    );
+                    break;
+                case 'deeper_forest':
+                    updateStory(
+                        "Deeper into the forest, you find an enchanted clearing with glowing mushrooms. They seem to form a trail leading somewhere.",
+                        "https://via.placeholder.com/800x400?text=Glowing+Mushrooms",
+                        ["Follow the mushroom trail", "Set up camp"],
+                        ['mushroom_trail', 'camp']
+                    );
+                    break;
+                case 'cave':
+                    updateStory(
+                        "Inside the cave, you find ancient inscriptions and a mysterious chest. The air feels heavy with magic.",
+                        "https://via.placeholder.com/800x400?text=Ancient+Chest",
+                        ["Open the chest", "Leave it and explore further"],
+                        ['open_chest', 'explore_further']
+                    );
+                    break;
+                case 'trail':
+                    updateStory(
+                        "Higher up the trail, you discover a secluded monastery where monks seem to guard something valuable.",
+                        "https://via.placeholder.com/800x400?text=Secluded+Monastery",
+                        ["Speak to the monks", "Sneak around"],
+                        ['monks', 'sneak']
+                    );
+                    break;
+                case 'noise':
+                    updateStory(
+                        "The noise was just a wandering deer. You feel relieved but uneasy. You decide to head towards the cursed lake despite the warnings.",
+                        "https://via.placeholder.com/800x400?text=Cursed+Lake",
+                        ["Explore the lake", "Leave the forest"],
+                        ['explore_lake', 'leave_forest']
+                    );
+                    break;
+                default:
+                    storyDiv.innerHTML = `<h2>The End</h2><p>Your choices have created a unique story. Perhaps, another journey awaits?</p>`;
+                    storyImage.src = "https://via.placeholder.com/800x400?text=Story+Complete";
+            }
+        }
+
+        function updateStory(newText, imageUrl, options, optionKeys) {
+            let optionsHtml = options.map((option, index) => 
+                `<button class="option" onclick="makeChoice('${optionKeys[index]}')">${option}</button>`
+            ).join("");
+            storyDiv.innerHTML = `
+                <p>${newText}</p>
+                <img class="story-image" src="${imageUrl}" alt="Story Image">
+                <div class="options">${optionsHtml}</div>
+            `;
+        }
+    </script>
+</body>
+</html>
